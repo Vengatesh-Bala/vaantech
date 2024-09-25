@@ -385,6 +385,17 @@ header.main-header .header-sticky.active{
 	background: var(--white-color);
 	backdrop-filter: blur(30px);
 }
+/* Styling the active link */
+.navbar-nav .nav-item .nav-link.active {
+    color: var(--accent-color); /* Change to the color you want for the active link */
+    font-weight: bold;
+    border-bottom: 2px solid var(--accent-color); /* This adds an underline */
+}
+
+/* Optional: Styling for hover as well */
+.navbar-nav .nav-item .nav-link:hover {
+    color: var(--text-color);
+}
 
 .navbar{
 	padding: 0;
@@ -392,22 +403,24 @@ header.main-header .header-sticky.active{
 }
 
 .navbar-brand{
-	padding: 0;
-	margin: 0;
+	padding: 0px; 
+	margin: 0px;
 }
 
 .navbar-brand img{
-	min-width: 140px;
+	min-width: 240px;
 }
 
 .main-menu .nav-menu-wrapper{
 	flex: 1;
-	text-align: center;
+	text-align: right;
 }
 
 .main-menu .nav-menu-wrapper > ul{
-	align-items: center;
+	align-items: right;
 	display: inline-flex;
+    gap: 20px;
+   
 }
 
 .main-menu ul li{
@@ -594,7 +607,7 @@ header.main-header .header-sticky.active{
 .hero{
 	position: relative;
 	background: var(--secondary-color) url(../images/hero-bg.png) no-repeat bottom center;
-	padding: 140px 0;
+	padding: 50px 0;
 }
 
 .hero-content{
