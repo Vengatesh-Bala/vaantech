@@ -387,7 +387,7 @@ header.main-header .header-sticky.active{
 }
 /* Base link style */
 .navbar-nav .nav-item .nav-link {
-    color: var(--text-color); /* Default color for nav links */
+    color: var(--primary-color); /* Default color for nav links */
     position: relative;
     padding-bottom: 1px;
     transition: color 0.3s ease;
