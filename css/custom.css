@@ -385,17 +385,72 @@ header.main-header .header-sticky.active{
 	background: var(--white-color);
 	backdrop-filter: blur(30px);
 }
-/* Styling the active link */
-.navbar-nav .nav-item .nav-link.active {
-    color: var(--accent-color); /* Change to the color you want for the active link */
-    font-weight: bold;
-    border-bottom: 2px solid var(--accent-color); /* This adds an underline */
+/* Base link style */
+.navbar-nav .nav-item .nav-link {
+    color: var(--text-color); /* Default color for nav links */
+    position: relative;
+    padding-bottom: 1px;
+    transition: color 0.3s ease;
 }
 
-/* Optional: Styling for hover as well */
-.navbar-nav .nav-item .nav-link:hover {
-    color: var(--text-color);
+/* Styling for the active link */
+.navbar-nav .nav-item .nav-link.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 4px;
+    height: 4px;
+    background-color: var(--accent-color); /* Active underline color */
+    transition: all 0.3s ease;
+    border-radius: 30px; /* Small curve for the underline */
+    width: 90%; /* Control the width of the underline */
+    margin: 0 auto; /* Center the underline */
+    background: linear-gradient(to right, #f7961c06, #116cb4);
+
 }
+
+/* Styling for the hover effect on non-active links */
+.navbar-nav .nav-item .nav-link:not(.active):hover::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 4px;
+    height: 4px;
+    background-color: var(--accent-color); /* Hover underline color */
+    transition: all 0.3s ease;
+    border-radius: 30px; /* Small curve for the underline */
+    width: 90%; /* Control the width of the underline */
+    margin: 0 auto;
+    
+
+}
+
+/* Reset active link hover effect */
+.navbar-nav .nav-item .nav-link.active:hover::after {
+    content: '';
+    background-color: var(--accent-color); /* Keep active color */
+}
+
+/* Optional: Add smooth transition for color change */
+.navbar-nav .nav-item .nav-link:hover {
+    color: var(--primary-color); /* Change color on hover */
+}
+@keyframes growUnderline {
+    from {
+        width: 0;
+    }
+    to {
+        width: 50%;
+    }
+}
+
+/* Add animation to hover */
+.navbar-nav .nav-item .nav-link:not(.active):hover::after {
+    animation: growUnderline 0.3s ease forwards;
+}
+
 
 .navbar{
 	padding: 0;
@@ -1165,7 +1220,7 @@ header.main-header .header-sticky.active{
 /************************************/
 
 .main-footer{
-	background-color: var(--secondary-color);
+	background-color: #f0f2fc            ;
 	padding: 80px 0 0;
 }
 
