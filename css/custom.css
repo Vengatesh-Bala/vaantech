@@ -1575,7 +1575,7 @@ header.main-header .header-sticky.active{
 }
 
 .scrolling-ticker{
-	padding: 15px 0;
+	padding: 2px 0;
 	color: var(--white-color);
 	background-color: var(--accent-color);
 }
